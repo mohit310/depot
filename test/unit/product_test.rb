@@ -43,4 +43,12 @@ class ProductTest < ActiveSupport::TestCase
       assert new_product(name).invalid?, "#{name} shouldn't be valid"
     end
   end
+
+  test "can delete product" do
+    @product = Product.find(980190980)
+    assert_not_nil @product
+    assert_difference('Product.count', -1) do
+      @product.delete
+    end
+  end
 end

@@ -53,7 +53,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   test "should destroy product" do
-    @product = Product.find(980190981)
+    @product = Product.find(980190980)
     assert_not_nil @product
     assert_difference('Product.count', -1) do
       delete :destroy, :id => @product.to_param

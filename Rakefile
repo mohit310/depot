@@ -4,9 +4,10 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Depot::Application.load_tasks
 Rake::TaskManager.class_eval do
   def remove_task(task_name)
     @tasks.delete(task_name.to_s)
   end
 end
+
+Depot::Application.load_tasks

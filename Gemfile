@@ -11,6 +11,7 @@ end
 
 platforms :jruby do
   gem 'activerecord-jdbc-adapter'
+  gem 'will_paginate', '>= 3.0.pre'
 
   # As rails --database switch does not support derby, hsqldb, h2 nor mssql
   # as valid values, if you are not using SQLite, comment out the SQLite gem

@@ -65,6 +65,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   java
@@ -74,3 +75,4 @@ DEPENDENCIES
   jdbc-sqlite3
   rails (= 3.0.5)
   sqlite3
+  will_paginate (>= 3.0.pre)

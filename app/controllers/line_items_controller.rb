@@ -37,8 +37,8 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
   end
 
-  # POST /line_items
-  # POST /line_items.xml
+  # POST /line_items/:productid
+  # POST /line_items.xml/:productid
   def create
     @cart = current_cart
     reset_hits
@@ -47,7 +47,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.cart) }
+        format.html { redirect_to(store_url) }
+        format.js { @current_item = @line_item }
         format.xml { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
